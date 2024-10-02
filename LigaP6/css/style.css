@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* body {
+    background-color: rgb(0, 0, 0);
+}
+
+/*---------------------------------------header------------------------------------------------*/
+.navegador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(10, 153, 0);
+    margin-bottom: 70px;
+    padding-left: 50px;
+}
+.BTN-Nav{
+    background-color: rgb(255, 255, 255);
+    border-style: none;
+    color: rgb(10, 153, 0);
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    transition: 0.5s;
+    margin-left: 20px;
+}
+.BTN-login {
+    background-color: rgb(255, 255, 255);
+    border-style: none;
+    color: rgb(10, 153, 0);
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+
+
+.BTN-login:hover {
+    background-color: black;
+    color: white;
+}
+.BTN-Nav:hover {
+    background-color: black;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #000000 !important;
+    border-style: none;
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    color: white !important;
+    transition: 0.5s;
+}
+
+.logout-btn:hover {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+}
+
+/*---------------------------------------inicio------------------------------------------------*/
+
+.inicio{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.AboutUS{
+    margin-top: 100px;
+}
+
+.directivos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.directivos h2{
+    margin-bottom: 70px;
+}
+
+.directivos img{
+    width: 400px;
+}
+.Contenido_directivos{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.Ganador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.Ganador h2{
+    margin-bottom: 70px;
+}
+
+.Ganador img{
+    width: 400px;
+}
+
+.Contenido_ganador{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: white;
+}
+
+.desarrollador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.desarrollador h2{
+    margin-bottom: 70px;
+}
+
+.desarrollador img{
+    width: 400px;
+}
+
+.Contenido_desarrollador{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.box {
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    width: 100%; /* Establecer tamaño para el pseudo-elemento */
+    height: 100%;
+    overflow: hidden;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%; /* Establecer tamaño para el pseudo-elemento */
+    height: 70%;
+    background: linear-gradient(0deg, transparent, rgb(35, 255, 19), rgb(35, 255, 19)  );
+    transform-origin: bottom right;
+    animation: animate 3s linear infinite,fadeOut 0.5s linear forwards;
+    animation-delay: -3s, 3s;
+}
+.fixture{
+    display: flex;
+    color: white;
+
+}
+.titulo{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 150px;
+    color: white;
+    text-align: center;
+}
+
+@keyframes animate 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.bienvenida{
+    position: relative;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 150px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+
+.bg-gray-transparent {
+    background-color: rgba(128, 128, 128, 0.5); /* Gris con 50% de opacidad */
+}
+
+
+.eliminar{
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+span .eliminar {
+    margin-right: 200px;
+}
+
+.formulario_agregar{
+    display: flex;
+}

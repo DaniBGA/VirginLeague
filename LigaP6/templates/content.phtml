@@ -1,0 +1,53 @@
+
+<?php require 'templates/header.phtml'; ?>
+<?php AuthHelper::init();
+            if (AuthHelper::verify()): ?>
+            <p class= "text-danger">Fausto Y santi manga de boludos les recuerdo que para que un partido quede en pendiente tienen que poner los valores en negativo por ejemplo: -1</p>
+        <?php endif; ?>
+ <table class="table table-striped">
+    <thead>
+        <tr>
+        <?php AuthHelper::init();
+            if (AuthHelper::verify()): ?>
+            <th class= "bg-danger text-center text-white">eliminar</th>
+        <?php endif; ?>
+            <th class= "bg-success text-center text-white">Equipo Local</th>
+            <th class= "bg-success text-center text-white">Goles Local</th>
+            <th class= "bg-success text-center text-white">Goles Visita</th>
+            <th class= "bg-success text-center text-white">Equipo Visita</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($partidos as $partido): ?>
+    <tr> <?php AuthHelper::init();
+            if (AuthHelper::verify()): ?>
+            <td class="text-center"><a href="https://www.virginleague.site/eliminar/<?= $partido->id_partido?>?fecha=<?= $fecha?>" class="btn btn-danger">Eliminar</a></td>
+            <?php endif; ?>
+        <td class="text-center text-white">
+            <?= $partido->equipo_local ?>
+        </td>
+        <?php if ($partido->goles_local > $partido->goles_visita && $partido->goles_local >= 0 && $partido->goles_visita >= 0): ?>
+            <td class="text-center text-success"><?= $partido->goles_local ?></td>
+            <td class="text-center text-danger"><?= $partido->goles_visita ?></td>
+        <?php elseif ($partido->goles_local < $partido->goles_visita && $partido->goles_local >= 0 && $partido->goles_visita >= 0): ?>
+            <td class="text-center text-danger"><?= $partido->goles_local ?></td>
+            <td class="text-center text-success"><?= $partido->goles_visita ?></td>
+        <?php elseif ($partido->goles_local == $partido->goles_visita && $partido->goles_local >= 0 && $partido->goles_visita >= 0): ?>
+            <td class="text-center text-warning"><?= $partido->goles_local ?></td>
+            <td class="text-center text-warning"><?= $partido->goles_visita ?></td>
+        <?php else: ?>
+            <td class="text-center text-white">Pendiente</td>
+            <td class="text-center text-white">Pendiente</td>
+        <?php endif; ?>
+        <td class="text-center text-white"><?= $partido->equipo_visita ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+    <a href="https://www.virginleague.site/fixture/<?= $temporada ?>" class="btn btn-success"> <-volver </a>
+<?php AuthHelper::init();
+                    if (AuthHelper::verify()): ?>
+                         <a href="https://www.virginleague.site/añadir?fecha=<?= $fecha?>" class="btn btn-success">Añadir</a>
+                    <?php endif; 
+
+

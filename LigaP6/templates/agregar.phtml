@@ -1,0 +1,50 @@
+<?php require 'templates/header.phtml'; ?>
+<p class= "text-center text-danger">Fausto Y santi manga de boludos les recuerdo que para que un partido quede en pendiente tienen que poner los valores en negativo por ejemplo: -1</p>
+<div class="container mt-5">
+    <h1 class="text-center text-white mb-4">Ingrese un nuevo partido</h1>
+
+    <div class="d-flex justify-content-center">
+        <form class="w-50 bg-dark p-4 rounded" action="https://www.virginleague.site/añadirPartido" method="POST">
+            <input type="hidden" name="fecha" value="<?= $fecha ?>">
+
+            <!-- Equipo Local -->
+            <div class="form-group mb-3">
+                <label for="equipo_local" class="text-white">Equipo Local</label>
+                <select class="form-control" name="equipo_local" id="equipo_local" required>
+                    <option value="">Seleccione Equipo Local</option>
+                    <?php foreach ($equipos as $equipo): ?>
+                        <option value="<?= $equipo->nombre ?>"><?= $equipo->nombre ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Goles Local -->
+            <div class="form-group mb-3">
+                <label for="goles_local" class="text-white">Goles Local</label>
+                <input class="form-control" type="number" name="goles_local"  placeholder="Goles Local" required>
+            </div>
+
+            <!-- Goles Visita -->
+            <div class="form-group mb-3">
+                <label for="goles_visita" class="text-white">Goles Visita</label>
+                <input class="form-control" type="number" name="goles_visita" placeholder="Goles Visita" required>
+            </div>
+
+            <!-- Equipo Visita -->
+            <div class="form-group mb-3">
+                <label for="equipo_visita" class="text-white">Equipo Visita</label>
+                <select class="form-control" name="equipo_visita" id="equipo_visita" required>
+                    <option value="">Seleccione Equipo Visita</option>
+                    <?php foreach ($equipos as $equipo): ?>
+                        <option value="<?= $equipo->nombre ?>"><?= $equipo->nombre ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Botón Guardar -->
+            <div class="form-group text-center">
+                <input type="submit" value="Guardar Partido" class="btn btn-primary w-50">
+            </div>
+        </form>
+    </div>
+</div>

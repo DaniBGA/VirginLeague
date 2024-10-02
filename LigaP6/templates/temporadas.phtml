@@ -1,0 +1,14 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h1 class= "text-center text-white">Temporadas:</h1>
+<h2 class= "text-center text-white">Seleccione una Temporada de la liga:</h2>
+<ul class="list-group">
+    <?php foreach ($temporadas as $temporada): ?>
+        <a class="text-white font-weight-bold" href="./fixture/<?= $temporada->ID ?>" class="text-decoration-none text-dark"><button class="list-group-item mb-2 text-white w-50 text-center bg-success  p-3 mx-auto">
+             <?= $temporada->ID ?> 
+    </button></a>
+    <?php endforeach ?>
+</ul>
+<a href="https://www.virginleague.site/inicio" class="btn btn-success"><-volver</a>
+
+<?php require 'templates/footer.phtml' ?>

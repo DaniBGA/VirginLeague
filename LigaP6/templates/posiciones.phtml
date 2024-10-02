@@ -1,0 +1,45 @@
+<?php require 'templates/header.phtml'; ?>
+ <table class="table table-striped">
+    <thead>
+        <tr>
+            <th class= "bg-secondary text-center text-white ">Posiciones</th>
+            <th class= "bg-secondary text-center text-white">Nombre</th>
+            <th class= "bg-secondary text-center text-white">Jugador</th>
+            <th class= "bg-secondary text-center text-white">puntos</th>
+            <th class= "bg-secondary text-center text-white">Partidos Ganados</th>
+            <th class= "bg-secondary text-center text-white">Partidos Perdidos</th>
+            <th class= "bg-secondary text-center text-white">Partidos Empatados</th>
+            <th class= "bg-secondary text-center text-white">Goles a favor</th>
+            <th class= "bg-secondary text-center text-white">Goles recibidos</th>
+            <th class= "bg-secondary text-center text-white">Diferencia de gol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        $contador = 1; // Inicializamos el contador en 1
+        foreach ($posiciones as $posicion): 
+        ?>
+        <tr>
+        <?php if ($contador <= 5): ?>
+            <td class="text-center bg-success text-black font-weight-bold"><?= $contador++; ?>
+            <?php elseif($contador >= 6 && $contador <= 13):?>
+            <td class="text-center bg-warning text-black font-weight-bold"><?= $contador++; ?>
+            <?php else: ?>
+                <td class="text-center bg-danger text-black font-weight-bold"><?= $contador++; ?>
+            <?php endif; ?>
+            <td class="text-center text-white"><?= $posicion->nombre ?></td>
+            <td class="text-center text-white"><?= $posicion->nombre_j ?></td>
+            <td class="text-center text-warning font-weight-bold"><?= $posicion->puntos ?></td>
+            <td class="text-center text-white"><?= $posicion->partidos_ganados ?></td>
+            <td class="text-center text-white"><?= $posicion->partidos_perdidos ?></td>
+            <td class="text-center text-white"><?= $posicion->partidos_empatados ?></td>
+            <td class="text-center text-white"><?= $posicion->goles_a_favor ?></td>
+            <td class="text-center text-white"><?= $posicion->goles_recibidos ?></td>
+            <td class="text-center text-white"><?= $posicion->goles_a_favor - $posicion->goles_recibidos?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<a href="https://www.virginleague.site/posicionesTemp" class="btn btn-success">
+    <-volver
+</a>

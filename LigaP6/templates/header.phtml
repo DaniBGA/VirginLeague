@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="https://www.virginleague.site/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>virgin League</title>
+</head>
+    <body>  
+        <header> 
+            <nav class="navegador">
+                <div class="btn_todos">
+                    <a href="https://www.virginleague.site/inicio"><img class="logo" src="https://www.virginleague.site/imagenes/Guia-oficial-de-Pro-Evolution-Soccer-PES-6-El-Entrenador-mas-Experto-i1n636207.png" alt="logo Pes"></a>
+                    <a href="https://www.virginleague.site/temporada"><button class="BTN-Nav">Fixture</button></a>
+                    <a href="https://www.virginleague.site/posicionesTemp"><button class="BTN-Nav">Posiciones</button></a>
+                </div>
+                <?php AuthHelper::init();
+                    if (!isset($_SESSION['usuario'])): ?>
+                        <a href="https://www.virginleague.site/login"><button class="BTN-login">Admin</button></a>
+                    <?php else: ?>
+                        <a href="https://www.virginleague.site/logout"><button class="logout-btn">Logout</button></a>
+                    <?php endif; ?>       
+            </nav>
+        </header>
